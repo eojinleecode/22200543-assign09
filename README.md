@@ -4,13 +4,13 @@
 * 주제 및 주요 기능 : 영화 데이터를 다루는 CRUD program, DBeaver가 아닌 JPA를 이용해서 DB CRUD 구현
 
 * Entity 필드 구조 : 
-\- id - Long 타입 : 영화 번호 지정 (프라이머리 키)
-\- title - String 타입 : 	영화 제목
-\- director - String 타입 : 감독
-\- genre - String 타입 : 장르
-\- rating - Double 타입 : 영화 평점
-\- releaseYear - Integer 타입 : 개봉 연도
-\- runningTime - Integer 타입 : 상영 시간
+\- id - Long 타입 : 영화 번호 지정 (프라이머리 키) <br>
+\- title - String 타입 : 영화 제목<br>
+\- director - String 타입 : 감독<br>
+\- genre - String 타입 : 장르<br>
+\- rating - Double 타입 : 영화 평점<br>
+\- releaseYear - Integer 타입 : 개봉 연도<br>
+\- runningTime - Integer 타입 : 상영 시간<br>
 
 * 프로젝트 구조 및 개발 환경 :
 
@@ -22,10 +22,10 @@ src/main/java/org/example/jpamovie/week09_jpaproject
 ├── Controller/MovieController.java
 └── Dto/MovieRequest.java, MovieResponse.java
 
-\- Java JDK 23, Spring Boot 4.1.2,Gradle
-\- Spring Data JPA, Hibernate, MariaDB
-\- IntelliJ IDEA, DBeaver, Postman
-\- GitHub, Docker, Render
+\- Java JDK 23, Spring Boot 4.1.2,Gradle <br>
+\- Spring Data JPA, Hibernate, MariaDB<br>
+\- IntelliJ IDEA, DBeaver, Postman<br>
+\- GitHub, Docker, Render<br>
 
 * Github Repository URL : https://github.com/eojinleecode/22200543-assign09
 
@@ -50,16 +50,17 @@ src/main/java/org/example/jpamovie/week09_jpaproject
 5. 테이블 조회
 
 ## 3. Spring Data JPA 구현
-* Entity 및 JpaRepository 설명 : Movie.java는 영화 정보를 저장하는 클래스, @Entity와
+* Entity 및 JpaRepository 설명 : Movie.java는 영화 정보를 저장하는 클래스,@Entity와
   @Table(name = "movies")를 통해 데이터베이스의 movies 테이블과 연결
 * 사용한 Annotation의 역할 :
-\- @Table- MariaDB 테이블 이름 지명
-\- @Entity- JPA Entity로 고정
-\- @Id- 기본 키
-\- @RestController- rest api 요청 처리
-\- @Valid- 요청 데이터 유효성 검사
-\- @Service- 서비스 클래스 지정
-\- @GeneratedValue- 기본 키 자동 생성
+
+\- @Table- MariaDB 테이블 이름 지명 <br>
+\- @Entity- JPA Entity로 고정<br>
+\- @Id- 기본 키<br>
+\- @RestController- rest api 요청 처리<br>
+\- @Valid- 요청 데이터 유효성 검사<br>
+\- @Service- 서비스 클래스 지정<br>
+\- @GeneratedValue- 기본 키 자동 생성<br>
 
 * REST API Endpoint 목록 및 요청응답 JSON :
 \- 접근 방법 {api/movies/{id}} or {api/movies/}
@@ -107,8 +108,8 @@ src/main/java/org/example/jpamovie/week09_jpaproject
 
 * Key Learning: 
 1. 직접 SQL 쿼리문을 작성하지 않아도 Jpa를 이용해 데이터를 저장하고 수정할 수 있다는 점을 배웠습니다.
-2. DTO 기능 이분화, Entity 직접 전달하지 않고 생성 및 반환 관점에서(request and response)을 DTO의 역할을 나눠서 구현할 수 있다는 점을 배웠습니다.
-3. Render를 비롯한 여러 배포사이트를 통해 site를 배포하면 , 데이터를 파일처럼 영구 저장에 있어서 편리하다는 점을 배웠습니다.
+2. DTO 기능 이분화, Entity 직접 전달하지 않고 생성 및 반환 관점에서(request and response)<br> DTO의 역할을 나눠서 구현할 수 있다는 점을 배웠습니다.
+3. Render를 비롯한 여러 배포사이트를 통해 site를 배포하면 , 데이터를 파일처럼<br> 영구 저장에 있어서 편리하다는 점을 배웠습니다.
 
 * Problem & Solution: Docker file 미작성으로 인한 배포 오류 ,  command "docker init" 및 도커파일 수정으로 해결 완료. 
 
@@ -116,15 +117,16 @@ src/main/java/org/example/jpamovie/week09_jpaproject
   extends JpaRepository<Movie, Long> { }**
 
  \- MovieRepository는 JPA에서 제공하는 JpaRepository 인터페이스를 상속
+ <br>
  \- JpaRepository를 상속하면 직접 Sql 쿼리문들을 작성하지 않아도 다음 메서드를 사용이 가능해짐
 
 * AI Usage: AI 활용 내용 및 직접 수정·검증한 부분, 자신이 생각하는 AI사용률(%):
 
-\- 30 ~35 % 
-\- 전체 프로젝트의 DTO의 전반적 기능, 개념 설명 요청
-\- service 구현 중 존재하지 않는 ID에 대한 오류 처리부분 코드 제시 요청
-\- Dockerfile 수정 및 Render 배포 과정의 문제 해결
-\- IntelliJ에서 Hibernate SQL 확인하는 방법 모색 
+\- 30~35%  
+\- 전체 프로젝트의 DTO의 전반적 기능, 개념 설명 요청  <br>
+\- Service 구현 중 존재하지 않는 ID에 대한 오류 처리 부분 코드 제시 요청  <br>
+\- Dockerfile 수정 및 Render 배포 과정의 문제 해결  <br>
+\- IntelliJ에서 Hibernate SQL 확인하는 방법 모색 <br>
 
 * Reflection: Sql의 더 세밀한 문법, 그리고  혹시 JPA말고도 테이블을 더쉽게 다루는 테크닉이 있다면 알고 싶습니다. 그리고 
   Docker에 대한 전반적인 이해를 향상시키고 싶다는 생각을 했습니다.
