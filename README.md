@@ -14,13 +14,21 @@
 
 * 프로젝트 구조 및 개발 환경 :
 
+```
 src/main/java/org/example/jpamovie/week09_jpaproject
 ├── Week09JpaprojectApplication.java
-├── Entity/Movie.java
-├── Repository/MovieRepository.java
-├── Service/MovieService.java
-├── Controller/MovieController.java
-└── Dto/MovieRequest.java, MovieResponse.java
+├── Entity/
+│   └── Movie.java
+├── Repository/
+│   └── MovieRepository.java
+├── Service/
+│   └── MovieService.java
+├── Controller/
+│   └── MovieController.java
+└── Dto/
+    ├── MovieRequest.java
+    └── MovieResponse.java
+```
 
 \- Java JDK 23, Spring Boot 4.1.2,Gradle <br>
 \- Spring Data JPA, Hibernate, MariaDB<br>
@@ -70,13 +78,46 @@ src/main/java/org/example/jpamovie/week09_jpaproject
 ![](image/postman(delete%20id%205_data).png)
 * JPA Entity와 MariaDB Table 비교 :
 
+| 비교 항목 | JPA Entity (Movie.java) | MariaDB Table (movies) |
+|---|---|---|
+| 이름 | Movie | movies |
+| 기본 키 | Long id | BIGINT id |
+| 영화 제목 | String title | VARCHAR(100) title |
+| 감독 | String director | VARCHAR(100) director |
+| 장르 | String genre | VARCHAR(50) genre |
+| 평점 | Double rating | DOUBLE rating |
+| 개봉 연도 | Integer releaseYear | INT release_year |
+| 상영 시간 | Integer runningTime | INT running_time |
+
 ## 4. JPA , SQL 비교
 
 * save(), findAll(), findById(), deleteById() 사용 결과 : 
+
+
+| JPA 메서드 | SQL 작업 | 기능 |
+|---|---|---|
+| save() | INSERT | 새로운 영화 데이터 등록 |
+| findAll() | SELECT | 전체 영화 데이터 조회 |
+| findById() | SELECT WHERE | 특정 ID의 영화 조회 |
+| save() | UPDATE | 기존 영화 데이터 수정 |
+| deleteById() | DELETE | 특정 ID의 영화 삭제 |
+| existsById() | 존재 여부 조회 | 삭제 전 영화 존재 여부 확인 |
+
 * 실제 Hibernate SQL 확인
 ![](image/hibernate_intelliJ.png)
 * SQL을 직접 작성하는 방식과 JPA 방식의 차이 : 
 
+
+| 비교 항목 | SQL 직접 작성 방식 |  JPA 방식               |
+|---|---|-----------------------|
+| 데이터 등록 | INSERT INTO 사용 | save() 사용             |
+| 전체 조회 | SELECT * FROM 사용 | findAll() 사용          |
+| 단건 조회 | SELECT WHERE 사용 | findById() 사용         |
+| 데이터 수정 | UPDATE SET 사용 | Entity 수정 후 save() 사용 |
+| 데이터 삭제 | DELETE FROM 사용 | deleteById() 사용       |
+| 데이터 관리 | Table과 Column 중심 | Entity 객체 중심          |
+| SQL 작성 | 개발자가 직접 작성 | Hibernate가 SQL 생성     |
+| 장점 | SQL을 세밀하게 제어 가능 | 반복적인 SQL 작성 감소        |
 
 ## 5. 배포 및 환경 설정
 
@@ -127,6 +168,7 @@ src/main/java/org/example/jpamovie/week09_jpaproject
 \- Service 구현 중 존재하지 않는 ID에 대한 오류 처리 부분 코드 제시 요청  <br>
 \- Dockerfile 수정 및 Render 배포 과정의 문제 해결  <br>
 \- IntelliJ에서 Hibernate SQL 확인하는 방법 모색 <br>
+
 
 * Reflection: Sql의 더 세밀한 문법, 그리고  혹시 JPA말고도 테이블을 더쉽게 다루는 테크닉이 있다면 알고 싶습니다. 그리고 
   Docker에 대한 전반적인 이해를 향상시키고 싶다는 생각을 했습니다.
