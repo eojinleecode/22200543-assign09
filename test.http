@@ -1,0 +1,84 @@
+
+###
+POST https://two2200543-assign09.onrender.com/api/movies
+Content-Type: application/json
+
+{
+  "title": "The Dark Knight",
+  "director": "Christopher Nolan",
+  "genre": "Action",
+  "rating": 9.0,
+  "releaseYear": 2008,
+  "runningTime": 152
+}
+
+###
+POST https://two2200543-assign09.onrender.com/api/movies
+Content-Type: application/json
+
+{
+  "title": "Whiplash",
+  "director": "Damien Chazelle",
+  "genre": "Drama",
+  "rating": 8.7,
+  "releaseYear": 2014,
+  "runningTime": 106
+}
+
+###
+POST https://two2200543-assign09.onrender.com/api/movies
+Content-Type: application/json
+
+{
+  "title": "Spirited Away",
+  "director": "Hayao Miyazaki",
+  "genre": "Animation",
+  "rating": 9.2,
+  "releaseYear": 2001,
+  "runningTime": 125
+}
+
+###
+POST https://two2200543-assign09.onrender.com/api/movies
+Content-Type: application/json
+
+{
+  "title": "Top Gun: Maverick",
+  "director": "Joseph Kosinski",
+  "genre": "Action",
+  "rating": 8.6,
+  "releaseYear": 2022,
+  "runningTime": 130
+}
+
+###
+POST https://two2200543-assign09.onrender.com/api/movies
+Content-Type: application/json
+
+{
+  "title": "Coco",
+  "director": "Lee Unkrich",
+  "genre": "Animation",
+  "rating": 8.8,
+  "releaseYear": 2017,
+  "runningTime": 105
+}
+
+###
+PUT https://two2200543-assign09.onrender.com/api/movies/6
+Content-Type: application/json
+
+{
+  "title": "The Dark Knight",
+  "director": "Christopher Nolan",
+  "genre": "Action",
+  "rating": 9.5,
+  "releaseYear": 2008,
+  "runningTime": 152
+}
+
+###
+GET https://two2200543-assign09.onrender.com/api/movies
+
+###
+DELETE https://two2200543-assign09.onrender.com/api/movies/4
