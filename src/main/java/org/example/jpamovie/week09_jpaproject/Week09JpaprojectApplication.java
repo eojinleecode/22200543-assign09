@@ -1,4 +1,4 @@
-package org.example.jpabook.week09_jpaproject;
+package org.example.jpamovie.week09_jpaproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -4,32 +4,28 @@
 * 주제 및 주요 기능 : 영화 데이터를 다루는 CRUD program, DBeaver가 아닌 JPA를 이용해서 DB CRUD 구현
 
 * Entity 필드 구조 : 
-- id - Long 타입 : 영화 번호 지정 (프라이머리 키)
-- title - String 타입 : 	영화 제목
-- director - String 타입 : 감독
-- genre - String 타입 : 장르
-- rating - Double 타입 : 영화 평점
-- releaseYear - Integer 타입 : 개봉 연도
-- runningTime - Integer 타입 : 상영 시간
+\- id - Long 타입 : 영화 번호 지정 (프라이머리 키)
+\- title - String 타입 : 	영화 제목
+\- director - String 타입 : 감독
+\- genre - String 타입 : 장르
+\- rating - Double 타입 : 영화 평점
+\- releaseYear - Integer 타입 : 개봉 연도
+\- runningTime - Integer 타입 : 상영 시간
 
 * 프로젝트 구조 및 개발 환경 :
-  week09_jpaproject
-  | -- Controller
-  |      L--- MovieController.java
-  |---- Dto
-  |      L --- MovieRequest.java
-  |      L ---- MovieResponse.java
-  |---Entity
-  |     L ---Movie.java
-  |---- Repository
-  |       L--- MovieRepository.java
-   L---- Service
-           L--- MovieService.java
 
-- Java JDK 23, Spring Boot 4.1.2,Gradle
-- Spring Data JPA, Hibernate, MariaDB
-- IntelliJ IDEA, DBeaver, Postman
-- GitHub, Docker, Render
+src/main/java/org/example/jpamovie/week09_jpaproject
+├── Week09JpaprojectApplication.java
+├── Entity/Movie.java
+├── Repository/MovieRepository.java
+├── Service/MovieService.java
+├── Controller/MovieController.java
+└── Dto/MovieRequest.java, MovieResponse.java
+
+\- Java JDK 23, Spring Boot 4.1.2,Gradle
+\- Spring Data JPA, Hibernate, MariaDB
+\- IntelliJ IDEA, DBeaver, Postman
+\- GitHub, Docker, Render
 
 * Github Repository URL : https://github.com/eojinleecode/22200543-assign09
 
@@ -54,9 +50,23 @@
 5. 테이블 조회
 
 ## 3. Spring Data JPA 구현
-* Entity 및 JpaRepository 설명 :
+* Entity 및 JpaRepository 설명 : Movie.java는 영화 정보를 저장하는 클래스, @Entity와
+  @Table(name = "movies")를 통해 데이터베이스의 movies 테이블과 연결
 * 사용한 Annotation의 역할 :
+\- @Table- MariaDB 테이블 이름 지명
+\- @Entity- JPA Entity로 고정
+\- @Id- 기본 키
+\- @RestController- rest api 요청 처리
+\- @Valid- 요청 데이터 유효성 검사
+\- @Service- 서비스 클래스 지정
+\- @GeneratedValue- 기본 키 자동 생성
+
 * REST API Endpoint 목록 및 요청응답 JSON :
+\- 접근 방법 {api/movies/{id}} or {api/movies/}
+![](image/postman(add_data).png)
+![](image/postman(get_data).png)
+![](image/postman(put_data%20rating%209.1%20change%209.5).png)
+![](image/postman(delete%20id%205_data).png)
 * JPA Entity와 MariaDB Table 비교 :
 
 ## 4. JPA , SQL 비교
@@ -78,10 +88,13 @@
 
 ![값 추가](image/deploy(post).png)
 1. 값 추가
+
 ![값 수정](image/deploy(put_change_rating).png)
 2. 값 수정
+
 ![전체 조회](image/deploy(get_all_data).png)
 3. 전체 조회
+
 ![값 삭제](image/deploy(delete%20id4).png)
 4. 값 삭제
 
@@ -102,16 +115,16 @@
 * Code Review: **public interface MovieRepository
   extends JpaRepository<Movie, Long> { }**
 
- - MovieRepository는 JPA에서 제공하는 JpaRepository 인터페이스를 상속
- - JpaRepository를 상속하면 직접 Sql 쿼리문들을 작성하지 않아도 다음 메서드를 사용이 가능해짐
+ \- MovieRepository는 JPA에서 제공하는 JpaRepository 인터페이스를 상속
+ \- JpaRepository를 상속하면 직접 Sql 쿼리문들을 작성하지 않아도 다음 메서드를 사용이 가능해짐
 
 * AI Usage: AI 활용 내용 및 직접 수정·검증한 부분, 자신이 생각하는 AI사용률(%):
 
-- 30 ~35 % 
-- 전체 프로젝트의 DTO의 전반적 기능, 개념 설명 요청
-- service 구현 중 존재하지 않는 ID에 대한 오류 처리부분 코드 제시 요청
-- Dockerfile 수정 및 Render 배포 과정의 문제 해결
-- IntelliJ에서 Hibernate SQL 확인하는 방법 모색 
+\- 30 ~35 % 
+\- 전체 프로젝트의 DTO의 전반적 기능, 개념 설명 요청
+\- service 구현 중 존재하지 않는 ID에 대한 오류 처리부분 코드 제시 요청
+\- Dockerfile 수정 및 Render 배포 과정의 문제 해결
+\- IntelliJ에서 Hibernate SQL 확인하는 방법 모색 
 
 * Reflection: Sql의 더 세밀한 문법, 그리고  혹시 JPA말고도 테이블을 더쉽게 다루는 테크닉이 있다면 알고 싶습니다. 그리고 
   Docker에 대한 전반적인 이해를 향상시키고 싶다는 생각을 했습니다.

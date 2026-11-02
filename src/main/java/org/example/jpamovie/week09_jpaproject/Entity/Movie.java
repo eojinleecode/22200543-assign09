@@ -1,4 +1,4 @@
-package org.example.jpabook.week09_jpaproject.Entity;
+package org.example.jpamovie.week09_jpaproject.Entity;
 
 import jakarta.persistence.*;
 

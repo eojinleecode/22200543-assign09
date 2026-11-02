@@ -1,6 +1,6 @@
-package org.example.jpabook.week09_jpaproject.Dto;
+package org.example.jpamovie.week09_jpaproject.Dto;
 
-import org.example.jpabook.week09_jpaproject.Entity.Movie;
+import org.example.jpamovie.week09_jpaproject.Entity.Movie;
 
 public record MovieResponse(
         Long id,

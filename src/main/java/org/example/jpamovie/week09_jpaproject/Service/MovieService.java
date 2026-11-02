@@ -1,9 +1,9 @@
-package org.example.jpabook.week09_jpaproject.Service;
+package org.example.jpamovie.week09_jpaproject.Service;
 
-import org.example.jpabook.week09_jpaproject.Dto.MovieRequest;
-import org.example.jpabook.week09_jpaproject.Dto.MovieResponse;
-import org.example.jpabook.week09_jpaproject.Entity.Movie;
-import org.example.jpabook.week09_jpaproject.Repository.MovieRepository;
+import org.example.jpamovie.week09_jpaproject.Dto.MovieRequest;
+import org.example.jpamovie.week09_jpaproject.Dto.MovieResponse;
+import org.example.jpamovie.week09_jpaproject.Entity.Movie;
+import org.example.jpamovie.week09_jpaproject.Repository.MovieRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;

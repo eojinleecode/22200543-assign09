@@ -1,4 +1,4 @@
-package org.example.jpabook.week09_jpaproject.Dto;
+package org.example.jpamovie.week09_jpaproject.Dto;
 
 
 import jakarta.validation.constraints.NotBlank;
